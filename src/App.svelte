@@ -1,30 +1,27 @@
-<script>
-	export let name;
+<script lang="ts">
+	import TodoFooter from './components/TodoFooter.svelte';
+	import TodoHeader from './components/TodoHeader.svelte';
+	import TodoList from './components/TodoList.svelte';
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
+<style lang="scss">
+	.todo-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 50px 0;
+		min-height: 100vh;
+		.todo-inner {
+			width: 500px;
+			min-height: 500px;
 		}
 	}
 </style>
+
+<div class="todo-wrapper">
+	<div class="todo-inner">
+		<TodoHeader />
+		<TodoList />
+		<TodoFooter />
+	</div>
+</div>
